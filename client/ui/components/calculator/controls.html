@@ -10,10 +10,11 @@
           {{#each categories}}
           <label>{{label}}</label>
 
-          {{#each questions}}
+          {{#each displayQuestions}}
+
           <div class="field">
             <label for="">{{label}}</label>
-            <input type="number" value={{defaultValue}}>
+            <input type={{type}} value={{defaultValue}}>
 
           </div>
 

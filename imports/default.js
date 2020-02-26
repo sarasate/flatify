@@ -21,7 +21,7 @@ export const categories = [
       {
         id: "1",
         optional: true,
-        type: "input",
+        type: "number",
         label: "clientCalls",
         options: [],
         defaultValue: 1
@@ -30,7 +30,7 @@ export const categories = [
         id: "2",
         optional: true,
         activated: true,
-        type: "input",
+        type: "number",
         label: "courtDay",
         options: [],
         defaultValue: 1
@@ -39,7 +39,7 @@ export const categories = [
         id: "3",
         optional: true,
         activated: true,
-        type: "input",
+        type: "range",
         label: "contractPage",
         options: [],
         defaultValue: 1

@@ -13,12 +13,32 @@ Template.controls.helpers({
   displayQuestions: function() {
     return this.activated && this.questions;
   },
+  updateValue: function(category, question, value) {
+    const cat = Categories.find({ label: category }).fetch();
+    const quest = cat.questions.find(q => q === question);
+    quest.value = newValue;
+  },
   result: function() {
     const categories = Categories.find().fetch();
 
-    // const result = categories.reduce((acc, value)=>);
+    const result = categories
+      .reduce((a, b) => a.concat(b.activated && b.questions), [])
+      .reduce((a, b) => a + b.value, 0);
+    console.log(typeof result);
+    return Number(result);
+  }
+});
 
-    return 0;
+Template.controls.events({
+  "change .field"(event) {
+    const question = this;
+    // question.value = event.target.value;
+    // const [questions] = Categories.find().fetch();
+    // const updatedQuestions
+    Categories.update(
+      { "questions.id": question.id },
+      { $set: { "questions.$.value": event.target.value } }
+    ); //  ? {...q, value = event.target.value} : q
   }
 });
 

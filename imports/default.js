@@ -20,6 +20,7 @@ export const categories = [
     questions: [
       {
         id: "1",
+        value: 0,
         optional: true,
         type: "range",
         label: "Degree of automation",
@@ -37,6 +38,7 @@ export const categories = [
       },
       {
         id: "2",
+        value: 0,
         optional: true,
         type: "range",
         label: "Risk",
@@ -54,6 +56,7 @@ export const categories = [
       },
       {
         id: "3",
+        value: 0,
         optional: true,
         type: "checkbox",
         label: "Additional insurance required",

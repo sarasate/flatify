@@ -3,6 +3,25 @@
     <div class="calculator-modal">
       <div class="calculator-left">
         <!-- This is where the questions go -->
+        <h1>Calculator</h1>
+
+        <form action="" class="ui form">
+
+          {{#each categories}}
+          <label>{{label}}</label>
+
+          {{#each questions}}
+          <div class="field">
+            <label for="">{{label}}</label>
+            <input type="number" value={{defaultValue}}>
+
+          </div>
+
+          {{/each}}
+
+          {{/each}}
+
+        </form>
       </div>
       <div class="calculator-right">
         <div class="total-ammount">

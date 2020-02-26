@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans:300,400,600,700,800&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans:300,400,600,700,800&display=swap");
 
 html,
 body,
@@ -8,7 +8,7 @@ body,
   overflow: hidden;
   letter-spacing: 0.25px;
   box-sizing: border-box;
-  font-family: 'Open Sans', ;
+  font-family: "Open Sans";
 }
 
 $flatify-full: #ff416c;
@@ -61,6 +61,7 @@ $flatify-light: #ffdde5;
   width: 70%;
   float: left;
   background: #fff;
+  padding: 1rem;
 }
 .calculator-right {
   position: relative;
@@ -86,14 +87,14 @@ $flatify-light: #ffdde5;
   float: left;
   text-align: right;
   font-weight: 600;
-  padding-right: .5rem;
-  color: rgba(0,0,0,0.8);
+  padding-right: 0.5rem;
+  color: rgba(0, 0, 0, 0.8);
 }
 .currency {
   width: 40%;
   float: right;
   text-align: left;
-  padding-top: .7rem;
+  padding-top: 0.7rem;
   color: $flatify-full;
   font-weight: 600;
 }

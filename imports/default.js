@@ -21,27 +21,52 @@ export const categories = [
       {
         id: "1",
         optional: true,
-        type: "number",
-        label: "clientCalls",
-        options: [],
+        type: "range",
+        label: "Degree of automation",
+        options: [
+          {
+            value: 10,
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: "input"
+            }
+          }
+        ],
         defaultValue: 1
       },
       {
         id: "2",
         optional: true,
-        activated: true,
-        type: "number",
-        label: "courtDay",
-        options: [],
+        type: "range",
+        label: "Risk",
+        options: [
+          {
+            value: 10,
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: "input"
+            }
+          }
+        ],
         defaultValue: 1
       },
       {
         id: "3",
         optional: true,
-        activated: true,
-        type: "range",
-        label: "contractPage",
-        options: [],
+        type: "checkbox",
+        label: "Additional insurance required",
+        options: [
+          {
+            value: 10,
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: "input"
+            }
+          }
+        ],
         defaultValue: 1
       }
     ]

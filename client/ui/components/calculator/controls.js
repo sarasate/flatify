@@ -12,6 +12,13 @@ Template.controls.helpers({
   },
   displayQuestions: function() {
     return this.activated && this.questions;
+  },
+  result: function() {
+    const categories = Categories.find().fetch();
+
+    // const result = categories.reduce((acc, value)=>);
+
+    return 0;
   }
 });
 

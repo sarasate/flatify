@@ -9,9 +9,9 @@ Meteor.publish("templates.all", function() {
 });
 
 Meteor.publish("results.all", function() {
-  return Results.find();
+  return Results.find({ userId: Meteor.userId() });
 });
 
 Meteor.publish("inputs.all", function() {
-  return Inputs.find();
+  return Inputs.find({ userId: Meteor.userId() });
 });

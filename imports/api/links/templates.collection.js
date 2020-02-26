@@ -1,5 +1,5 @@
-Results = new Mongo.Collection("results");
-Results.deny({
+export const Templates = new Mongo.Collection("templates");
+Templates.deny({
   insert() {
     return true;
   },

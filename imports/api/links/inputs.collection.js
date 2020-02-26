@@ -1,4 +1,4 @@
-Inputs = new Mongo.Collection("");
+export const Inputs = new Mongo.Collection("");
 Inputs.deny({
   insert() {
     return true;

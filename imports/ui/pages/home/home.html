@@ -1,5 +1,9 @@
 <template name="App_home">
-  {{> loginButtons}}
 
+  {{#unless currentUser}}
+  {{> loginButtons}}
+  {{/if}}
+  {{#if currentUser}}
   {{> calculator}}
+  {{/if}}
 </template>

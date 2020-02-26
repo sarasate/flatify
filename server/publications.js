@@ -3,7 +3,9 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.publish("templates.all", function() {
-  return Templates.find();
+  console.log("line 5: Meteor.userId", Meteor.userId());
+
+  return Templates.find({ userId: Meteor.userId() });
 });
 
 Meteor.publish("results.all", function() {

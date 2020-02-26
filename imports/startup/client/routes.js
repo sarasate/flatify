@@ -1,11 +1,6 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-// Import needed templates
-import '../../ui/layouts/body/body';
-import '../../ui/pages/home/home';
-import '../../ui/pages/not-found/not-found';
-
 // Set up all routes in the app
 FlowRouter.route('/', {
   name: 'App.home',

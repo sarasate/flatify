@@ -12,3 +12,18 @@ html, body, #__blaze-root {
   height: 100%;
   background: #aaa;
 }
+
+@heading-height: 3rem;
+
+.heading {
+  width: 100%;
+  height: @heading-height;
+  background-color: red;
+  text-align: center;
+}
+
+.calculator-controls {
+  position: relative;
+  width: 100%;
+  height: calc(100% - @heading-height);
+}

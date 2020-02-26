@@ -4,9 +4,10 @@ import { Meteor } from "meteor/meteor";
 import { check } from "meteor/check";
 
 Meteor.methods({
-  "input.insert"(title, value) {
+  "result.insert"(data) {
     check(url, String);
     check(title, String);
-    return title;
+    const resultId = Results.insert({ userId: Meteor.userId(), ...data });
+    return resultId;
   }
 });

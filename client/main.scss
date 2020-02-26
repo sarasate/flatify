@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans:300,400,600,700,800&display=swap');
+
+html,
+body,
+#__blaze-root {
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  letter-spacing: 0.25px;
+  box-sizing: border-box;
+  font-family: 'Open Sans', ;
+}
+
+$flatify-full: #ff416c;
+$flatify-light: #ffdde5;
+
+.calculator-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.heading {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+
+.logo {
+  font-family: "Oleo Script";
+  width: 10rem;
+  text-align: center;
+  margin: 1.65rem auto;
+  font-size: 2rem;
+  font-weight: 900;
+  color: $flatify-full;
+}
+
+.calculator-controls {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 3rem);
+}
+
+.calculator-modal {
+  position: absolute;
+  width: 60rem;
+  height: calc(100% - 4rem);
+  top: 1rem;
+  left: calc(50% - 30rem);
+  border-radius: 8px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.calculator-left {
+  font-size: 0.9rem;
+  height: 100%;
+  width: 70%;
+  float: left;
+  background: #fff;
+}
+.calculator-right {
+  position: relative;
+  font-size: 0.9rem;
+  height: 100%;
+  width: 30%;
+  float: right;
+  border-left: 4px solid $flatify-full;
+  background-color: $flatify-light;
+  text-align: center;
+}
+
+.total-ammount {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 4rem;
+}
+
+.number {
+  font-size: 3rem;
+  width: 60%;
+  float: left;
+  text-align: right;
+  font-weight: 600;
+  padding-right: .5rem;
+  color: rgba(0,0,0,0.8);
+}
+.currency {
+  width: 40%;
+  float: right;
+  text-align: left;
+  padding-top: .7rem;
+  color: $flatify-full;
+  font-weight: 600;
+}

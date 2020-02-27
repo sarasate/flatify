@@ -22,7 +22,7 @@ export const categories = [
         id: "0",
         value: 0,
         optional: true,
-        type: "text",
+        type: "number",
         label: "Cost",
         modifier: {
           target: "base",

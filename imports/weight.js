@@ -51,7 +51,7 @@ export const weight = [
             modifier: {
               target: "base",
               operator: "x",
-              expression: 0.5
+              expression: 0.6
             }
           },
           {
@@ -67,7 +67,7 @@ export const weight = [
             modifier: {
               target: "base",
               operator: "x",
-              expression: 1.5
+              expression: 1.3
             }
           }
         ],
@@ -110,7 +110,7 @@ export const weight = [
 
       {
         _id: "w5",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -121,7 +121,7 @@ export const weight = [
             modifier: {
               target: "base",
               operator: "x",
-              expression: 1
+              expression: 0.75
             }
           },
           {
@@ -129,7 +129,7 @@ export const weight = [
             modifier: {
               target: "base",
               operator: "x",
-              expression: 1.25
+              expression: 1
             }
           },
           {
@@ -137,7 +137,7 @@ export const weight = [
             modifier: {
               target: "base",
               operator: "x",
-              expression: 1.5
+              expression: 1.25
             }
           }
         ],

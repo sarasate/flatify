@@ -18,7 +18,12 @@ Template.question.helpers({
             this.selectedValue.operator === "+" ||
             this.selectedValue.operator === "x"
               ? "added-value"
-              : "substract-value"
+              : "substract-value",
+          curr:
+            this.selectedValue.operator === "+" ||
+            this.selectedValue.operator === "-"
+              ? "eur"
+              : ""
         }
       : this.options
       ? {
@@ -28,7 +33,12 @@ Template.question.helpers({
             this.options[this.value].modifier.operator === "+" ||
             this.options[this.value].modifier.operator === "x"
               ? "added-value"
-              : "substract-value"
+              : "substract-value",
+          curr:
+            this.options[this.value].modifier.operator === "+" ||
+            this.options[this.value].modifier.operator === "-"
+              ? "eur"
+              : ""
         }
       : {
           operator: "+",
@@ -59,11 +69,14 @@ Template.controls.helpers({
     }, []);
 
     const values = activatedQuestions.map(elem => {
-      const res = elem.selectedValue
+      let res = elem.selectedValue
         ? elem.selectedValue
         : elem.options
         ? elem.options[elem.value].modifier
         : { expression: elem.selectedValue };
+
+      if (elem.type === "number")
+        res.expression = elem.value * elem.modifier.expression;
       return { question: elem.label, ...res };
     });
 
@@ -83,8 +96,8 @@ Template.controls.helpers({
           ? a / b.expression
           : a * b.expression;
       return calc;
-    }, 0);
-    return { summary, result: Math.max(result, 0) };
+    }, 35);
+    return { summary, result: Math.max(parseInt(result, 10), 0) };
   }
 });
 

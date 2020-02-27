@@ -203,6 +203,10 @@ label.categorie-label {
   // text-transform: uppercase;
 }
 
+input {
+  outline: none;
+}
+
 input[type="range"] {
   width: 100%;
   background-color: $flatify-full;

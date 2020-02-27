@@ -14,6 +14,53 @@ body,
 $flatify-full: #ff416c;
 $flatify-light: #ffdde5;
 
+#login-buttons {
+  width: 30rem;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-top: 50vh;
+  color: $flatify-full;
+  font-weight: 600;
+}
+
+#login-buttons a {
+  color: $flatify-full;
+  font-weight: 600;
+}
+
+#login-dropdown-list {
+  border: none;
+  width: 22rem;
+  height: 20rem;
+  padding: 2rem 3rem;
+  left: calc(50% - 11rem);
+  top: calc(50% - 10rem);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+#login-buttons .login-close-text {
+  float: right;
+}
+
+.accounts-dialog label {
+  float: left;
+  opacity: .6;
+}
+
+#login-buttons input[type=email], #login-buttons input[type=password] {
+  border-radius: 0;
+  border: none;
+  background-color: $flatify-light !important;
+}
+
+#login-buttons button.login-button, #login-buttons button.login-button:hover {
+  background-color: $flatify-full;
+  border: none;
+  margin-top: 1.5rem;
+}
+
 .calculator-container {
   position: absolute;
   width: 100%;

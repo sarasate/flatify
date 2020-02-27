@@ -41,8 +41,10 @@
 
 <template name="question">
   <div class="field">
-    <label for="">{{label}}</label> <span
-      class={{displayValue.class}}>{{displayValue.operator}}{{displayValue.value}}</span>
+    <div class="question-heading">
+      <label for="">{{label}}</label> <span class={{displayValue.class}}>{{displayValue.operator}}{{displayValue.value}}
+        eur</span>
+    </div>
     <input type={{type}} value={{value}} min="0" max="2" step="1">
     {{displaySelected}}
   </div>

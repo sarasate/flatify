@@ -151,11 +151,24 @@ $flatify-light: #ffdde5;
   width: 100%;
   top: 4rem;
 }
+.question-heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 .added-value {
-  color: green;
+  color: rgb(21, 100, 21);
+  background-color: rgb(196, 255, 196);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-variant: small-caps;
 }
 .substract-value {
-  color: red;
+  color: rgb(117, 23, 23);
+  background-color: rgb(255, 196, 196);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-variant: small-caps;
 }
 .number {
   font-size: 3rem;
@@ -215,6 +228,7 @@ label.categorie-label {
 
 input {
   outline: none;
+  margin: 10px 0;
 }
 
 input[type="range"] {

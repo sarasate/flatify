@@ -14,7 +14,7 @@ export const court = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 5
             }
           },
@@ -22,7 +22,7 @@ export const court = [
             value: "medium",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 10
             }
           },
@@ -30,7 +30,7 @@ export const court = [
             value: "high",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 15
             }
           }
@@ -47,7 +47,7 @@ export const court = [
             value: "no",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 0
             }
           },
@@ -55,7 +55,7 @@ export const court = [
             value: "yes",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 300
             }
           }

@@ -5,14 +5,14 @@ export const negotiation = [
     questions: [
       {
         _id: "n1",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "number",
         label: "Number of meetings required (estimate)",
         modifier: {
           target: "base",
-          operator: "add",
+          operator: "+",
           expression: 100
         }
       },
@@ -28,7 +28,7 @@ export const negotiation = [
             value: "no",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 0
             }
           },
@@ -36,7 +36,7 @@ export const negotiation = [
             value: "yes",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 300
             }
           }
@@ -55,7 +55,7 @@ export const negotiation = [
             value: "no",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 0
             }
           },
@@ -63,7 +63,7 @@ export const negotiation = [
             value: "yes",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 300
             }
           }

@@ -525,3 +525,11 @@ input[type="checkbox"] ~ .selected-value {
 .ui .form input[type="number"] {
   margin-top: .5rem;
 }
+
+.logout-link {
+  position: absolute;
+  right: 2rem;
+  top: .75rem;
+  cursor: pointer;
+  opacity: .3;
+}

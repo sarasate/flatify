@@ -150,3 +150,10 @@ Template.question.events({
     return false;
   }
 });
+
+
+Template.heading.events({
+  'click .logout-link': function () {
+    Meteor.logout();
+  }
+})

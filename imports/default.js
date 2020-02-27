@@ -25,7 +25,7 @@ export const standard = [
     questions: [
       {
         _id: "1",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -60,7 +60,7 @@ export const standard = [
       },
       {
         _id: "2",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -94,7 +94,7 @@ export const standard = [
       },
       {
         _id: "3",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -128,7 +128,7 @@ export const standard = [
       },
       {
         _id: "4",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -164,7 +164,7 @@ export const standard = [
 
       {
         _id: "5",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "range",

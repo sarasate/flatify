@@ -8,6 +8,14 @@ Template.controls.onCreated(function() {
 });
 // const calculationState = new ReactiveVar({});
 
+Template.question.helpers({
+  displayValue: function() {
+    return this.selectedValue
+      ? this.selectedValue.expression
+      : this.options[this.value].modifier.expression;
+  }
+});
+
 Template.controls.helpers({
   categories: function() {
     return Categories.find().fetch();
@@ -19,11 +27,6 @@ Template.controls.helpers({
   displaySelected: function() {
     if (!this.options) return;
     return this.options[this.value].value;
-  },
-  displayValue: function() {
-    return this.selectedValue
-      ? this.selectedValue.expression
-      : this.options[this.value].modifier.expression;
   },
 
   result: function() {

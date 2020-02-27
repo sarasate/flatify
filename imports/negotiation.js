@@ -14,7 +14,7 @@ export const negotiation = [
         modifier: {
           target: "base",
           operator: "+",
-          expression: 100
+          expression: 150
         }
       },
       {

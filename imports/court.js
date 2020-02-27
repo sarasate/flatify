@@ -5,8 +5,8 @@ export const court = [
     questions: [
       {
         _id: "c1",
-        label: "Risk",
-        value: 0,
+        label: "Probability of success",
+        value: 1,
         selectedValue: null,
         type: "range",
         options: [
@@ -14,8 +14,8 @@ export const court = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 5
+              operator: "-",
+              expression: 200
             }
           },
           {
@@ -23,7 +23,7 @@ export const court = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 10
+              expression: 0
             }
           },
           {
@@ -31,35 +31,24 @@ export const court = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 15
+              expression: 200
             }
           }
         ]
       },
       {
-        _id: "c2",
-        label: "Existing template used",
-        value: 0,
+        _id: "c10",
+        value: 1,
         selectedValue: null,
-        type: "checkbox",
-        options: [
-          {
-            value: "no",
-            modifier: {
-              target: "base",
-              operator: "",
-              expression: 0
-            }
-          },
-          {
-            value: "yes",
-            modifier: {
-              target: "base",
-              operator: "-",
-              expression: 30
-            }
-          }
-        ]
+        optional: true,
+        type: "number",
+        label: "Number of court days",
+        max: 9999999999999,
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: 250
+        }
       }
     ]
   }

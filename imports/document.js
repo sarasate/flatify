@@ -14,36 +14,10 @@ export const document = [
         modifier: {
           target: "base",
           operator: "+",
-          expression: 100
+          expression: 20
         }
       },
-      {
-        _id: "d2",
-        value: 0,
-        selectedValue: null,
-        optional: true,
-        type: "checkbox",
-        label: "Existing template used",
-        options: [
-          {
-            value: "no",
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: 0
-            }
-          },
-          {
-            value: "yes",
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: 300
-            }
-          }
-        ],
-        defaultValue: 1
-      },
+
       {
         _id: "d3",
         value: 0,
@@ -65,7 +39,7 @@ export const document = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 300
+              expression: 100
             }
           }
         ],
@@ -92,7 +66,7 @@ export const document = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 300
+              expression: 200
             }
           }
         ],

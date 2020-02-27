@@ -336,3 +336,44 @@ input[type="range"]:focus::-ms-fill-upper {
 .switch-outer.on ~ .switch-label {
   color: #39868d;
 }
+
+.ui.form input[type="checkbox"] {
+  width: 18px;
+  -webkit-appearance: none;
+  border: 2px solid $flatify-full;
+  height: 18px;
+  cursor: pointer;
+  vertical-align: bottom;
+  margin-right: 1rem;
+}
+.ui form input[type="checkbox"]:focus {
+  outline: none;
+}
+.ui form input[type="checkbox"]:checked {
+    // background-color: $flatify-light;
+  position: relative;
+}
+
+// .ui form input[type="checkbox"]:checked::after {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #010101;
+// }
+
+.ui form input[type="checkbox"]:checked::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid $flatify-full;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(38deg);
+}

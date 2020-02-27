@@ -73,9 +73,18 @@ Template.controls.helpers({
       .map(elem => {
         return `${elem.question} ${elem.operator || "+"} ${elem.expression}`;
       });
-    console.log(summary);
-    const result = sorted.reduce((a, b) => a + b.expression, 0);
-    return { summary, result };
+    const result = sorted.reduce((a, b) => {
+      const calc =
+        !b.operator || b.operator === "+"
+          ? a + b.expression
+          : b.operator === "-"
+          ? a - b.expression
+          : b.operator === "/"
+          ? a / b.expression
+          : a * b.expression;
+      return calc;
+    }, 0);
+    return { summary, result: Math.max(result, 0) };
   }
 });
 

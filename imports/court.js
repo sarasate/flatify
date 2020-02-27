@@ -47,7 +47,7 @@ export const court = [
             value: "no",
             modifier: {
               target: "base",
-              operator: "+",
+              operator: "",
               expression: 0
             }
           },
@@ -55,8 +55,8 @@ export const court = [
             value: "yes",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 300
+              operator: "-",
+              expression: 30
             }
           }
         ]

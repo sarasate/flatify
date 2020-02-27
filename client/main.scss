@@ -46,16 +46,18 @@ $flatify-light: #ffdde5;
 
 .accounts-dialog label {
   float: left;
-  opacity: .6;
+  opacity: 0.6;
 }
 
-#login-buttons input[type=email], #login-buttons input[type=password] {
+#login-buttons input[type="email"],
+#login-buttons input[type="password"] {
   border-radius: 0;
   border: none;
   background-color: $flatify-light !important;
 }
 
-#login-buttons button.login-button, #login-buttons button.login-button:hover {
+#login-buttons button.login-button,
+#login-buttons button.login-button:hover {
   background-color: $flatify-full;
   border: none;
   margin-top: 1.5rem;
@@ -149,7 +151,7 @@ $flatify-light: #ffdde5;
 .ui.form .field > label {
   font-weight: 600;
   padding-top: 1rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 label.categorie-label {
@@ -169,38 +171,37 @@ input[type="range"] {
   background: transparent; /* Otherwise white in Chrome */
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   cursor: pointer;
 
   /* Hides the slider so custom styles can be added */
-  background: transparent; 
+  background: transparent;
   border-color: transparent;
   color: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  
+
   height: 16px;
   width: 16px;
   border-radius: 100%;
   background: $flatify-full;
   border: 2px solid $flatify-full;
   cursor: pointer;
-  margin-top: -4px; 
+  margin-top: -4px;
 }
 /* All the same stuff for Firefox */
-input[type=range]::-moz-range-thumb {
-
+input[type="range"]::-moz-range-thumb {
   height: 16px;
   width: 16px;
   border-radius: 100%;
@@ -209,8 +210,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 /* All the same stuff for IE */
-input[type=range]::-ms-thumb {
-
+input[type="range"]::-ms-thumb {
   height: 16px;
   width: 16px;
   border-radius: 100%;
@@ -218,20 +218,19 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
   background: $flatify-light;
   border-radius: 20px;
-
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: $flatify-light;
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
@@ -240,7 +239,7 @@ input[type=range]::-moz-range-track {
   border: 0.2px solid #010101;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
@@ -249,25 +248,27 @@ input[type=range]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
   background: $flatify-full;
 
   border-radius: 20px;
 }
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
   background: $flatify-full;
 }
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
   background: $flatify-full;
 
   border-radius: 20px;
 }
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
   background: $flatify-full;
 }
 
 .switch-component {
-  margin: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .switch-outer {
@@ -302,7 +303,7 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 1;
   //   background-color: #69b920;
   //   border: 2px solid #69b920;
-  background-color: #61afb9;
+  background-color: $flatify-full;
   border: 2px solid #fff;
 }
 
@@ -312,8 +313,8 @@ input[type=range]:focus::-ms-fill-upper {
   // border-bottom-left-radius: 2px;
   // border-top-left-radius: 2px;
   border-radius: 100px;
-  background-color: #88ffff;
-  border: 2px solid #39858d;
+  background-color: $flatify-light;
+  border: 2px solid $flatify-full;
   transform: translateX(1.05rem);
   transition: transform 0.1s ease;
 }

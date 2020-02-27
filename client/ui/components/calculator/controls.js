@@ -22,9 +22,12 @@ Template.controls.helpers({
     const categories = Categories.find().fetch();
 
     const result = categories
-      .reduce((a, b) => a.concat(b.activated && b.questions), [])
-      .reduce((a, b) => a + b.value, 0);
-    console.log(typeof result);
+      .reduce((a, b) => {
+        return a
+          .concat(b.activated && b.questions)
+          .map(elem => Number(elem.value));
+      }, [])
+      .reduce((a, b) => a + b, 0);
     return Number(result);
   }
 });

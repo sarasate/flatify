@@ -13,6 +13,10 @@ Template.question.helpers({
     return this.selectedValue
       ? this.selectedValue.expression
       : this.options[this.value].modifier.expression;
+  },
+  displaySelected: function() {
+    if (!this.options) return;
+    return this.options[this.value].value;
   }
 });
 
@@ -22,11 +26,6 @@ Template.controls.helpers({
   },
   displayQuestions: function() {
     return this.activated && this.questions;
-  },
-
-  displaySelected: function() {
-    if (!this.options) return;
-    return this.options[this.value].value;
   },
 
   result: function() {

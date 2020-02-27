@@ -11,8 +11,22 @@ Template.controls.onCreated(function() {
 Template.question.helpers({
   displayValue: function() {
     return this.selectedValue
-      ? this.selectedValue.expression
-      : this.options[this.value].modifier.expression;
+      ? {
+          operator: this.selectedValue.operator,
+          value: this.selectedValue.expression,
+          class:
+            this.selectedValue.operator === "+" || "x"
+              ? "added-value"
+              : "substract-value"
+        }
+      : {
+          operator: this.options[this.value].modifier.operator,
+          value: this.options[this.value].modifier.expression,
+          class:
+            this.options[this.value].modifier.operator === "+" || "x"
+              ? "added-value"
+              : "substract-value"
+        };
   },
   displaySelected: function() {
     if (!this.options) return;

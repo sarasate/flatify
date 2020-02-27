@@ -151,7 +151,12 @@ $flatify-light: #ffdde5;
   width: 100%;
   top: 4rem;
 }
-
+.added-value {
+  color: green;
+}
+.substract-value {
+  color: red;
+}
 .number {
   font-size: 3rem;
   width: 60%;
@@ -474,7 +479,6 @@ input[type="range"]:focus::-ms-fill-upper {
   }
 }
 
-
 .category-wrapper {
   margin-top: 2rem;
 }
@@ -485,5 +489,5 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .field.show {
   opacity: 1;
-  transition: opacity .75s ease;
+  transition: opacity 0.75s ease;
 }

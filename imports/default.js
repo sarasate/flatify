@@ -24,20 +24,6 @@ export const standard = [
     noSwitch: true,
     questions: [
       {
-        _id: "0",
-        value: 0,
-        selectedValue: null,
-        optional: true,
-        type: "number",
-        label: "Cost",
-        modifier: {
-          target: "base",
-          operator: "+",
-          expression: 100
-        },
-        defaultValue: 0
-      },
-      {
         _id: "1",
         value: 1,
         selectedValue: null,
@@ -74,7 +60,7 @@ export const standard = [
       },
       {
         _id: "2",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -108,7 +94,7 @@ export const standard = [
       },
       {
         _id: "3",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -129,27 +115,56 @@ export const standard = [
               operator: "+",
               expression: 300
             }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: 15
+            }
           }
         ]
       },
       {
         _id: "4",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
-        type: "number",
-        label: "Cost",
-        modifier: {
-          target: "base",
-          operator: "+",
-          expression: 100
-        },
-        defaultValue: 0
+        type: "range",
+        label: "Urgengy",
+        options: [
+          {
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: 10
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: 20
+            }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: 30
+            }
+          }
+        ],
+        defaultValue: 1
       },
 
       {
         _id: "5",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "range",

@@ -162,6 +162,9 @@ $flatify-light: #ffdde5;
   padding: 2px 4px;
   border-radius: 2px;
   font-variant: small-caps;
+  white-space: nowrap;
+  height: auto;
+  display: inline-table;
 }
 .substract-value {
   color: rgb(117, 23, 23);
@@ -497,11 +500,23 @@ input[type="range"]:focus::-ms-fill-upper {
   margin-top: 2rem;
 }
 
-.field {
+.ui.form .field {
   opacity: 0;
+  margin-top: 1.5rem;
 }
 
-.field.show {
+.ui.form .field.show {
   opacity: 1;
   transition: opacity 0.75s ease;
+}
+
+.selected-value {
+  opacity: .3;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+input[type="checkbox"] ~ .selected-value {
+  display: none;
 }

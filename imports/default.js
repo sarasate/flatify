@@ -132,7 +132,7 @@ export const standard = [
         selectedValue: null,
         optional: true,
         type: "range",
-        label: "Urgengy",
+        label: "Urgency",
         options: [
           {
             value: "low",

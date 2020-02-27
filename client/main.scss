@@ -196,6 +196,7 @@ $flatify-light: #ffdde5;
     width: 100%;
     float: right;
     height: calc(100% - 8rem);
+    padding: 2rem;
   }
   .calculator-right {
     width: 100%;
@@ -519,4 +520,8 @@ input[type="range"]:focus::-ms-fill-upper {
 
 input[type="checkbox"] ~ .selected-value {
   display: none;
+}
+
+.ui .form input[type="number"] {
+  margin-top: .5rem;
 }

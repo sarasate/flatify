@@ -90,6 +90,7 @@ Template.controls.helpers({
 
 Template.controls.events({
   "change .field"(event) {
+    event.preventDefault();
     const question = this;
 
     const { type } = question;
@@ -117,6 +118,10 @@ Template.controls.events({
       }
     );
   },
+  "submit form"(event) {
+    event.preventDefault();
+    return event.keyCode !== "13";
+  },
   "click .switch-outer"(event) {
     const category = this.data;
 
@@ -124,5 +129,11 @@ Template.controls.events({
       { _id: category._id },
       { $set: { activated: !category.activated } }
     );
+  }
+});
+
+Template.question.events({
+  "submit .field"(event) {
+    return false;
   }
 });

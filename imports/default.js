@@ -21,47 +21,48 @@ export const categories = [
       {
         _id: "0",
         value: 0,
+        selectedValue: null,
         optional: true,
         type: "number",
         label: "Cost",
         modifier: {
           target: "base",
-          operator: "+",
+          operator: "add",
           expression: 100
         },
-        // options: [
-        //   {
-        //     value: "low"
-        //   },
-        //   {
-        //     value: "medium"
-        //   },
-        //   {
-        //     value: "high"
-        //   }
-        // ],
         defaultValue: 0
       },
       {
         _id: "1",
         value: 1,
+        selectedValue: null,
         optional: true,
         type: "range",
         label: "Degree of automation",
-        modifier: {
-          target: "base",
-          operator: "+",
-          expression: 10
-        },
         options: [
           {
-            value: "low"
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
           },
           {
-            value: "medium"
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 20
+            }
           },
           {
-            value: "high"
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 30
+            }
           }
         ],
         defaultValue: 1
@@ -69,23 +70,34 @@ export const categories = [
       {
         _id: "2",
         value: 0,
+        selectedValue: null,
         optional: true,
         type: "range",
         label: "Risk",
-        modifier: {
-          target: "base",
-          operator: "+",
-          expression: 15
-        },
         options: [
           {
-            value: "low"
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 5
+            }
           },
           {
-            value: "medium"
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
           },
           {
-            value: "high"
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 15
+            }
           }
         ],
         defaultValue: 1
@@ -93,20 +105,26 @@ export const categories = [
       {
         _id: "3",
         value: 0,
+        selectedValue: null,
         optional: true,
         type: "checkbox",
         label: "Additional insurance required",
-        modifier: {
-          target: "base",
-          operator: "+",
-          expression: 300
-        },
         options: [
           {
-            value: "no"
+            value: "no",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 300
+            }
           },
           {
-            value: "yes"
+            value: "yes",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 300
+            }
           }
         ],
         defaultValue: 1
@@ -114,70 +132,3 @@ export const categories = [
     ]
   }
 ];
-
-// const createQuestion = params => {
-//   questions.push({ ...params });
-// };
-
-// const createOption = (questionId, params) => {
-//   questions
-//     .find(question => question._id === questionId)
-//     .options.push({ ...params });
-// };
-// createQuestion({
-//   _id: i,
-//   user: "",
-//   optional: true,
-//   activated: true, // if .optional === true
-//   type: "dropdown",
-//   label: "Court",
-//   options: [],
-//   defaultValue: "Example of value",
-//   steps: 3 // if .type === 'slider'
-// });
-
-// createOption(questionId, {
-//   // label:'',
-//   value: 10,
-//   modifier: {
-//     target: "base",
-//     operator: "+",
-//     expression: "input"
-//   }
-// });
-
-// const addAddOn = newAddon => {
-//   settings.addOns = { ...settings.addOns, ...newAddon };
-// };
-
-// const renderTemplate = (templateType, data) => {
-//   console.log("TYPE:", templateType, "\nDATA:", data, "\n\n");
-//   // Blaze.renderWithData(
-//   //   Template[templateType],
-//   //   data
-//   //   Template.calculatorView
-//   // )
-// };
-// // Map
-// const createQuestions = questionList => {
-//   return questionList.map(question => {
-//     const { type } = question;
-//     const { options } = question;
-//     let data = { label: question.label };
-
-//     const dataTypes = {
-//       input: {
-//         value: question.defaultValue,
-//         placeholder: question.defaultValue
-//       },
-//       slider: { steps: Number((1 / question.steps).toFixed(1)) },
-//       dropdown: { items: options },
-//       checkbox: { options: options.map(o => ({ ...o, checked: "checked" })) }
-//     };
-//     return renderTemplate(type, { ...data, ...dataTypes[type] });
-//   });
-// };
-
-// // addAddOn({ nightShift: 200 });
-
-// // createQuestions(questions);

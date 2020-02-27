@@ -6,6 +6,7 @@ Template.controls.onCreated(function() {
     Categories.insert(category);
   });
 });
+const calculationState = new ReactiveVar({});
 
 Template.controls.helpers({
   categories: function() {
@@ -17,20 +18,26 @@ Template.controls.helpers({
 
   displaySelected: function() {
     if (!this.options) return;
-    return this.options[this.value === 0 ? this.value : this.value - 1].value;
+    return this.options[this.value].value;
   },
 
   result: function() {
     const categories = Categories.find().fetch();
-
     const result = categories
       .reduce((a, b) => {
         return a
           .concat(b.activated && b.questions)
-          .map(elem => Number(elem.value));
+          .map(elem =>
+            elem.selectedValue
+              ? elem.selectedValue
+              : elem.options
+              ? elem.options[elem.value].modifier
+              : elem.value
+          );
       }, [])
-      .reduce((a, b) => a + b, 0);
-    return Number(result) || 0;
+      .sort((a, b) => a.operator - b.operator)
+      .reduce((a, b) => a + b.expression || b, 0);
+    return result;
   }
 });
 
@@ -38,22 +45,27 @@ Template.controls.events({
   "change .field"(event) {
     const question = this;
 
-    const { type, modifier } = question;
-    const { target, operator, expression } = modifier;
+    // const { type } = question;
 
-    const newValue =
-      type === "checkbox"
-        ? +event.target.checked * modifier.expression
-        : type === "range"
-        ? +event.target.value
-        : event.target.value;
+    const userValue = +event.target.value;
+    const selectedValue = question.options
+      ? question.options[userValue].modifier
+      : !!event.target.value && question.modifier;
 
-    console.log(modifier, newValue);
+    calculationState.set({
+      ...calculationState.get(),
+      [question._id]: selectedValue
+    });
 
     Categories.update(
       { "questions._id": question._id },
-      { $set: { "questions.$.value": newValue } }
-    ); //  ? {...q, value = event.target.value} : q
+      {
+        $set: {
+          "questions.$.value": event.target.value,
+          "questions.$.selectedValue": selectedValue
+        }
+      }
+    );
   },
   "click .switch-outer"(event) {
     const category = this.data;

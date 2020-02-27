@@ -6,7 +6,7 @@ Template.controls.onCreated(function() {
     Categories.insert(category);
   });
 });
-const calculationState = new ReactiveVar({});
+// const calculationState = new ReactiveVar({});
 
 Template.controls.helpers({
   categories: function() {
@@ -25,15 +25,14 @@ Template.controls.helpers({
     const categories = Categories.find().fetch();
     const result = categories
       .reduce((a, b) => {
-        return a
-          .concat(b.activated && b.questions)
-          .map(elem =>
-            elem.selectedValue
-              ? elem.selectedValue
-              : elem.options
-              ? elem.options[elem.value].modifier
-              : elem.value
-          );
+        return a.concat(b.activated && b.questions).map(elem =>
+          elem.selectedValue
+            ? elem.selectedValue
+            : elem.options
+            ? elem.options[elem.value].modifier
+            : // : elem.style === 'checkbox' ?
+              elem.value
+        );
       }, [])
       .sort((a, b) => a.operator - b.operator)
       .reduce((a, b) => a + b.expression || b, 0);
@@ -45,23 +44,26 @@ Template.controls.events({
   "change .field"(event) {
     const question = this;
 
-    // const { type } = question;
+    const { type } = question;
+    const userValue =
+      type === "checkbox" ? +event.target.checked : +event.target.value;
+    const selectedValue =
+      type === "checkbox"
+        ? question.options[+event.target.checked].modifier
+        : question.options
+        ? question.options[userValue].modifier
+        : !!event.target.value && question.modifier;
 
-    const userValue = +event.target.value;
-    const selectedValue = question.options
-      ? question.options[userValue].modifier
-      : !!event.target.value && question.modifier;
-
-    calculationState.set({
-      ...calculationState.get(),
-      [question._id]: selectedValue
-    });
+    // calculationState.set({
+    //   ...calculationState.get(),
+    //   [question._id]: selectedValue
+    // });
 
     Categories.update(
       { "questions._id": question._id },
       {
         $set: {
-          "questions.$.value": event.target.value,
+          "questions.$.value": userValue,
           "questions.$.selectedValue": selectedValue
         }
       }

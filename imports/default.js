@@ -115,7 +115,7 @@ export const categories = [
             modifier: {
               target: "base",
               operator: "add",
-              expression: 300
+              expression: 0
             }
           },
           {

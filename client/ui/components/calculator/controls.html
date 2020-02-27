@@ -8,6 +8,7 @@
         <form action="" class="ui form">
 
           {{#each categories}}
+          <button>{{#if activated}} ON {{else}} OFF {{/if}}</button>
           <label>{{label}}</label>
 
           {{#each displayQuestions}}
@@ -15,7 +16,7 @@
           <div class="field">
             <label for="">{{label}}</label>
             <input type={{type}} value={{defaultValue}} min="1" max="3" step="1">
-
+            {{value}}
           </div>
 
           {{/each}}

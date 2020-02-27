@@ -24,9 +24,26 @@ export const categories = [
         optional: true,
         type: "range",
         label: "Degree of automation",
+
         options: [
           {
-            value: 10,
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: "input"
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "+",
+              expression: "input"
+            }
+          },
+          {
+            value: "high",
             modifier: {
               target: "base",
               operator: "+",

@@ -15,21 +15,19 @@
         <form action="" class="ui form">
 
           {{#each categories}}
-          <label class="categorie-label">{{label}}</label>
-          {{#unless noSwitch}}
-          {{#if activated}} {{> switch classes="on" data=this}} {{else}} {{> switch classes="off" data=this}} {{/if}}
-          {{/unless}}
 
+          <div class="category-wrapper">
+            <label class="categorie-label">{{label}}</label>
+            {{#unless noSwitch}}
+            {{#if activated}} {{> switch classes="on" data=this}} {{else}} {{> switch classes="off" data=this}} {{/if}}
+            {{/unless}}
 
-          {{#each displayQuestions}}
+            {{#each displayQuestions}}
 
-          <div class="field">
-            <label for="">{{label}}</label>
-            <input type={{type}} value={{value}} min="0" max="2" step="1">
-            {{displaySelected}}
+            {{> question}}
+
+            {{/each}}
           </div>
-
-          {{/each}}
 
           {{/each}}
 
@@ -37,5 +35,14 @@
       </div>
 
     </div>
+  </div>
+</template>
+
+
+<template name="question">
+  <div class="field">
+    <label for="">{{label}}</label>
+    <input type={{type}} value={{value}} min="0" max="2" step="1">
+    {{displaySelected}}
   </div>
 </template>

@@ -472,3 +472,17 @@ input[type="range"]:focus::-ms-fill-upper {
     display: none;
   }
 }
+
+
+.category-wrapper {
+  margin-top: 2rem;
+}
+
+.field {
+  opacity: 0;
+}
+
+.field.show {
+  opacity: 1;
+  transition: opacity .75s ease;
+}

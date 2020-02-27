@@ -45,7 +45,7 @@
       <label for="">{{label}}</label> <span class={{displayValue.class}}>{{displayValue.operator}}{{displayValue.value}}
         eur</span>
     </div>
-    <input type={{type}} value={{value}} min="0" max="2" step="1">
+    <input type={{type}} value={{value}} min="0" max="{{#if max}}{{max}}{{else}}2{{/if}}" step="1">
     {{displaySelected}}
   </div>
 </template>

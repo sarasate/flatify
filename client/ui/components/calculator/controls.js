@@ -20,7 +20,8 @@ Template.question.helpers({
               ? "added-value"
               : "substract-value"
         }
-      : {
+      : this.options
+      ? {
           operator: this.options[this.value].modifier.operator,
           value: this.options[this.value].modifier.expression,
           class:
@@ -28,6 +29,11 @@ Template.question.helpers({
             this.options[this.value].modifier.operator === "x"
               ? "added-value"
               : "substract-value"
+        }
+      : {
+          operator: "+",
+          value: this.value,
+          class: "added-value"
         };
   },
   displaySelected: function() {

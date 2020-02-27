@@ -10,6 +10,7 @@ export const negotiation = [
         optional: true,
         type: "number",
         label: "Number of meetings required (estimate)",
+        max: 999999999999999,
         modifier: {
           target: "base",
           operator: "+",

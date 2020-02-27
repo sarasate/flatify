@@ -10,6 +10,7 @@ export const document = [
         optional: true,
         type: "number",
         label: "Number of pages (estimate)",
+        max: 9999999999999,
         modifier: {
           target: "base",
           operator: "+",

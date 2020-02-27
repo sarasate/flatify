@@ -22,20 +22,24 @@ Template.controls.helpers({
   },
 
   result: function() {
+    // return 0;
     const categories = Categories.find().fetch();
-    const result = categories
-      .reduce((a, b) => {
-        return a.concat(b.activated && b.questions).map(elem =>
-          elem.selectedValue
-            ? elem.selectedValue
-            : elem.options
-            ? elem.options[elem.value].modifier
-            : // : elem.style === 'checkbox' ?
-              elem.value
-        );
-      }, [])
-      .sort((a, b) => a.operator - b.operator)
-      .reduce((a, b) => a + b.expression || b, 0);
+
+    const activatedQuestions = categories.reduce((a, b) => {
+      return a.concat(!b.activated ? { selectedValue: 0 } : b.questions);
+    }, []);
+
+    const values = activatedQuestions.map(elem =>
+      elem.selectedValue
+        ? elem.selectedValue
+        : elem.options
+        ? elem.options[elem.value].modifier
+        : { expression: elem.selectedValue }
+    );
+
+    const sorted = values.sort((a, b) => a.operator - b.operator);
+
+    const result = sorted.reduce((a, b) => a + b.expression, 0);
     return result;
   }
 });

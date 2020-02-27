@@ -130,5 +130,60 @@ export const categories = [
         defaultValue: 1
       }
     ]
+  },
+  {
+    label: "Advanced",
+    activated: true,
+    questions: [
+      {
+        _id: "0",
+        value: 0,
+        selectedValue: null,
+        optional: true,
+        type: "number",
+        label: "Cost",
+        modifier: {
+          target: "base",
+          operator: "add",
+          expression: 100
+        },
+        defaultValue: 0
+      },
+      {
+        _id: "1",
+        value: 1,
+        selectedValue: null,
+        optional: true,
+        type: "range",
+        label: "Degree of automation",
+        options: [
+          {
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 20
+            }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 30
+            }
+          }
+        ],
+        defaultValue: 1
+      }
+    ]
   }
 ];

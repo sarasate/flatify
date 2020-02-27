@@ -40,7 +40,7 @@ export const weight = [
       },
       {
         _id: "w1",
-        value: 0,
+        value: 1,
         selectedValue: null,
         optional: true,
         type: "range",
@@ -50,24 +50,24 @@ export const weight = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 10
+              operator: "x",
+              expression: 0.5
             }
           },
           {
             value: "medium",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 20
+              operator: "x",
+              expression: 1
             }
           },
           {
             value: "high",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 30
+              operator: "x",
+              expression: 1.5
             }
           }
         ],
@@ -85,24 +85,24 @@ export const weight = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 5
+              operator: "x",
+              expression: 1
             }
           },
           {
             value: "medium",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 10
+              operator: "x",
+              expression: 1.25
             }
           },
           {
             value: "high",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 15
+              operator: "x",
+              expression: 1.5
             }
           }
         ]
@@ -120,24 +120,24 @@ export const weight = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 10
+              operator: "x",
+              expression: 1
             }
           },
           {
             value: "medium",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 20
+              operator: "x",
+              expression: 1.25
             }
           },
           {
             value: "high",
             modifier: {
               target: "base",
-              operator: "+",
-              expression: 30
+              operator: "x",
+              expression: 1.5
             }
           }
         ],

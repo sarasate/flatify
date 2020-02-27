@@ -44,14 +44,14 @@ export const categories = [
       },
       {
         id: "1",
-        value: 0,
+        value: 1,
         optional: true,
         type: "range",
         label: "Degree of automation",
         modifier: {
           target: "base",
           operator: "+",
-          expression: "10%"
+          expression: 10
         },
         options: [
           {
@@ -75,7 +75,7 @@ export const categories = [
         modifier: {
           target: "base",
           operator: "+",
-          expression: "input"
+          expression: 15
         },
         options: [
           {
@@ -99,14 +99,14 @@ export const categories = [
         modifier: {
           target: "base",
           operator: "+",
-          expression: "input"
+          expression: 300
         },
         options: [
           {
-            value: "yes"
+            value: "no"
           },
           {
-            value: "no"
+            value: "yes"
           }
         ],
         defaultValue: 1

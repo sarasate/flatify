@@ -19,11 +19,7 @@ Template.controls.helpers({
     if (!this.options) return;
     return this.options[this.value === 0 ? this.value : this.value - 1].value;
   },
-  updateValue: function(category, question, value) {
-    const cat = Categories.find({ label: category }).fetch();
-    const quest = cat.questions.find(q => q === question);
-    quest.value = newValue;
-  },
+
   result: function() {
     const categories = Categories.find().fetch();
 
@@ -46,13 +42,17 @@ Template.controls.events({
     const { target, operator, expression } = modifier;
 
     const newValue =
-      type === "checkbox" ? event.target.checked : event.target.value;
+      type === "checkbox"
+        ? +event.target.checked * modifier.expression
+        : type === "range"
+        ? +event.target.value
+        : event.target.value;
 
     console.log(modifier, newValue);
 
     Categories.update(
       { "questions.id": question.id },
-      { $set: { "questions.$.value": event.target.value } }
+      { $set: { "questions.$.value": newValue } }
     ); //  ? {...q, value = event.target.value} : q
   },
   "click .switch-outer"(event) {
@@ -64,5 +64,3 @@ Template.controls.events({
     );
   }
 });
-
-Template.controls.events({});

@@ -3,13 +3,13 @@
     <div class="calculator-modal">
       <div class="calculator-left">
         <!-- This is where the questions go -->
-        <h1>Calculator</h1>
+        <!-- <h1>Calculator</h1> -->
 
         <form action="" class="ui form">
 
           {{#each categories}}
           <button>{{#if activated}} ON {{else}} OFF {{/if}}</button>
-          <label>{{label}}</label>
+          <label class="categorie-label">{{label}}</label>
 
           {{#each displayQuestions}}
 

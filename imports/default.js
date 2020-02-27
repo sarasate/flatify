@@ -19,7 +19,7 @@ export const settings = {
 
 export const standard = [
   {
-    label: "Standard",
+    label: "General",
     activated: true,
     questions: [
       // {

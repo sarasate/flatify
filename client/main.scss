@@ -212,10 +212,11 @@ input[type="range"] {
   background: transparent; /* Otherwise white in Chrome */
 }
 
-.ui .form input[type="number"] {
+.ui .form input[type="number"], .ui .form input[type="number"]:focus {
   border-color: $flatify-full;
   border-radius: 3px;
   border-width: 2px;
+  cursor: text;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -424,4 +425,40 @@ input[type="range"]:focus::-ms-fill-upper {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(38deg);
+}
+
+.calculator-illustration {
+  width: 22rem;
+  height: 31rem;
+  background-image: url(img/login.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 18.5rem;
+  position: absolute;
+  left: calc(50% + 16rem);
+  bottom: 1rem;
+}
+
+.login-illustration {
+  width: 27rem;
+  height: 39rem;
+  background-image: url(img/login.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 26.5rem;
+  position: absolute;
+  left: calc(50% + 16rem);
+  bottom: 1rem;
+}
+
+.calculator-illustration {
+  background-image: url(img/rocket.png);
+  bottom: 2rem;
+}
+
+@media screen and(max-width: 1200px) {
+  .login-illustration,
+  .calculator-illustration {
+    display: none;
+  }
 }

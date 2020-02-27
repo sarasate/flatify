@@ -8,8 +8,9 @@
         <form action="" class="ui form">
 
           {{#each categories}}
-          <button>{{#if activated}} ON {{else}} OFF {{/if}}</button>
           <label class="categorie-label">{{label}}</label>
+          {{#if activated}} {{> switch classes="on"}} {{else}} {{> switch classes="off"}} {{/if}}
+     
 
           {{#each displayQuestions}}
 

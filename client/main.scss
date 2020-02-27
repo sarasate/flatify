@@ -77,6 +77,11 @@ $flatify-light: #ffdde5;
   width: 100%;
   height: 100%;
   background: #fff;
+  opacity: 0;
+}
+.calculator-container.show {
+  opacity: 1;
+  transition: opacity 2s ease;
 }
 
 .heading {
@@ -321,6 +326,7 @@ input[type="range"]:focus::-ms-fill-upper {
   margin: 0.5rem 1rem;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .switch-outer {

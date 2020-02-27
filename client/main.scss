@@ -9,6 +9,7 @@ body,
   letter-spacing: 0.25px;
   box-sizing: border-box;
   font-family: "Open Sans";
+  font-size: 100%;
 }
 
 $flatify-full: #ff416c;
@@ -19,7 +20,7 @@ $flatify-light: #ffdde5;
   margin: 0 auto;
   display: block;
   text-align: center;
-  margin-top: 50vh;
+  margin-top: calc(50vh - 6rem);
   color: $flatify-full;
   font-weight: 600;
 }
@@ -63,6 +64,14 @@ $flatify-light: #ffdde5;
   margin-top: 1.5rem;
 }
 
+@media screen and (max-width: 455px) {
+  #login-dropdown-list {
+    width: calc(100vw - 2rem);
+    left: 1.75rem;
+    top: -14rem;
+  }
+}
+
 .calculator-container {
   position: absolute;
   width: 100%;
@@ -104,6 +113,13 @@ $flatify-light: #ffdde5;
   overflow: hidden;
 }
 
+@media screen and (max-width: 980px) {
+  .calculator-modal {
+    width: calc(100% - 2rem);
+    left: 1rem;
+  }
+}
+
 .calculator-left {
   font-size: 0.9rem;
   height: 100%;
@@ -111,6 +127,7 @@ $flatify-light: #ffdde5;
   float: left;
   background: #fff;
   padding: 4rem 5rem;
+  overflow: scroll;
 }
 .calculator-right {
   position: relative;
@@ -148,6 +165,30 @@ $flatify-light: #ffdde5;
   font-weight: 800;
 }
 
+@media screen and (max-width: 620px) {
+  .calculator-left {
+    width: 100%;
+    float: right;
+    height: calc(100% - 8rem);
+  }
+  .calculator-right {
+    width: 100%;
+    float: left;
+    height: 8rem;
+    border: none;
+    border-bottom: 4px solid $flatify-full;
+  }
+  .number {
+    width: 55%;
+  }
+  .currency {
+    width: 45%;
+  }
+  .total-ammount {
+    top: 2rem;
+  }
+}
+
 .ui.form .field > label {
   font-weight: 600;
   padding-top: 1rem;
@@ -169,6 +210,12 @@ input[type="range"] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
+}
+
+.ui .form input[type="number"] {
+  border-color: $flatify-full;
+  border-radius: 3px;
+  border-width: 2px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -342,6 +389,7 @@ input[type="range"]:focus::-ms-fill-upper {
   -webkit-appearance: none;
   border: 2px solid $flatify-full;
   height: 18px;
+  border-radius: 3px;
   cursor: pointer;
   vertical-align: bottom;
   margin-right: 1rem;
@@ -350,7 +398,7 @@ input[type="range"]:focus::-ms-fill-upper {
   outline: none;
 }
 .ui form input[type="checkbox"]:checked {
-    // background-color: $flatify-light;
+  // background-color: $flatify-light;
   position: relative;
 }
 
@@ -365,7 +413,7 @@ input[type="range"]:focus::-ms-fill-upper {
 // }
 
 .ui form input[type="checkbox"]:checked::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 4px;
   top: 0px;

@@ -1,3 +1,7 @@
+import { document } from "./document";
+import { court } from "./court";
+import { negotiation } from "./negotiation";
+
 export const settings = {
   type: "",
   currency: "eur",
@@ -13,32 +17,32 @@ export const settings = {
   }
 };
 
-export const categories = [
+export const standard = [
   {
     label: "Standard",
     activated: true,
     questions: [
-      {
-        _id: "0",
-        value: 0,
-        selectedValue: null,
-        optional: true,
-        type: "number",
-        label: "Cost",
-        modifier: {
-          target: "base",
-          operator: "add",
-          expression: 100
-        },
-        defaultValue: 0
-      },
+      // {
+      //   _id: "0",
+      //   value: 0,
+      //   selectedValue: null,
+      //   optional: true,
+      //   type: "number",
+      //   label: "Cost",
+      //   modifier: {
+      //     target: "base",
+      //     operator: "add",
+      //     expression: 100
+      //   },
+      //   defaultValue: 0
+      // },
       {
         _id: "1",
         value: 1,
         selectedValue: null,
         optional: true,
         type: "range",
-        label: "Degree of automation",
+        label: "Economic Impact",
         options: [
           {
             value: "low",
@@ -73,7 +77,7 @@ export const categories = [
         selectedValue: null,
         optional: true,
         type: "range",
-        label: "Risk",
+        label: "Risk of liability",
         options: [
           {
             value: "low",
@@ -99,11 +103,113 @@ export const categories = [
               expression: 15
             }
           }
-        ],
-        defaultValue: 1
+        ]
       },
       {
         _id: "3",
+        value: 0,
+        selectedValue: null,
+        optional: true,
+        type: "range",
+        label: "Difficulty of clarification of facts",
+        options: [
+          {
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 5
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 15
+            }
+          }
+        ]
+      },
+      {
+        _id: "4",
+        value: 0,
+        selectedValue: null,
+        optional: true,
+        type: "range",
+        label: "Urgengy",
+        options: [
+          {
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 5
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 15
+            }
+          }
+        ]
+      },
+
+      {
+        _id: "5",
+        value: 0,
+        selectedValue: null,
+        optional: true,
+        type: "range",
+        label: "Complexity",
+        options: [
+          {
+            value: "low",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 5
+            }
+          },
+          {
+            value: "medium",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 10
+            }
+          },
+          {
+            value: "high",
+            modifier: {
+              target: "base",
+              operator: "add",
+              expression: 15
+            }
+          }
+        ]
+      },
+      {
+        _id: "100",
         value: 0,
         selectedValue: null,
         optional: true,
@@ -130,60 +236,7 @@ export const categories = [
         defaultValue: 1
       }
     ]
-  },
-  {
-    label: "Advanced",
-    activated: true,
-    questions: [
-      {
-        _id: "0",
-        value: 0,
-        selectedValue: null,
-        optional: true,
-        type: "number",
-        label: "Cost",
-        modifier: {
-          target: "base",
-          operator: "add",
-          expression: 100
-        },
-        defaultValue: 0
-      },
-      {
-        _id: "1",
-        value: 1,
-        selectedValue: null,
-        optional: true,
-        type: "range",
-        label: "Degree of automation",
-        options: [
-          {
-            value: "low",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 10
-            }
-          },
-          {
-            value: "medium",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 20
-            }
-          },
-          {
-            value: "high",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 30
-            }
-          }
-        ],
-        defaultValue: 1
-      }
-    ]
   }
 ];
+
+export const categories = [...standard, ...document, ...court, ...negotiation];

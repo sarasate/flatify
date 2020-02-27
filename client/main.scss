@@ -93,10 +93,10 @@ $flatify-light: #ffdde5;
 
 .calculator-modal {
   position: absolute;
-  width: 60rem;
+  width: 46rem;
   height: calc(100% - 4rem);
   top: 1rem;
-  left: calc(50% - 30rem);
+  left: calc(50% - 23rem);
   border-radius: 8px;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -105,16 +105,16 @@ $flatify-light: #ffdde5;
 .calculator-left {
   font-size: 0.9rem;
   height: 100%;
-  width: 70%;
+  width: 60%;
   float: left;
   background: #fff;
-  padding: 1rem;
+  padding: 4rem 5rem;
 }
 .calculator-right {
   position: relative;
   font-size: 0.9rem;
   height: 100%;
-  width: 30%;
+  width: 40%;
   float: right;
   border-left: 4px solid $flatify-full;
   background-color: $flatify-light;
@@ -143,5 +143,195 @@ $flatify-light: #ffdde5;
   text-align: left;
   padding-top: 0.7rem;
   color: $flatify-full;
+  font-weight: 800;
+}
+
+.ui.form .field > label {
   font-weight: 600;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+}
+
+label.categorie-label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  // text-transform: uppercase;
+}
+
+input[type="range"] {
+  width: 100%;
+  background-color: $flatify-full;
+
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  background: $flatify-full;
+  border: 2px solid $flatify-full;
+  cursor: pointer;
+  margin-top: -4px; 
+}
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: $flatify-light;
+  border-radius: 20px;
+
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: $flatify-light;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: $flatify-light;
+  border-radius: 20px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: $flatify-full;
+
+  border-radius: 20px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $flatify-full;
+}
+input[type=range]::-ms-fill-upper {
+  background: $flatify-full;
+
+  border-radius: 20px;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: $flatify-full;
+}
+
+.switch-component {
+  margin: 0.5rem 0;
+}
+
+.switch-outer {
+  position: relative;
+  width: 2.2rem;
+  height: calc(1rem + 4px);
+  border-radius: 10px;
+  background-color: rgba(154, 163, 169, 0.62);
+  border: 2px solid #fff;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.85;
+  user-select: none;
+}
+
+.switch-inner {
+  position: absolute;
+  height: calc(1rem + 2px);
+  width: calc(1rem + 2px);
+  left: -2px;
+  top: -1px;
+  border-radius: 100px;
+  background-color: #fff;
+  border: 2px solid #90969a;
+  pointer-events: none;
+  // transform: scale(1);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.switch-outer.on,
+.switch-outer.on:hover {
+  opacity: 1;
+  //   background-color: #69b920;
+  //   border: 2px solid #69b920;
+  background-color: #61afb9;
+  border: 2px solid #fff;
+}
+
+.switch-outer.on .switch-inner {
+  // border-bottom-right-radius: 0px;
+  // border-top-right-radius: 0px;
+  // border-bottom-left-radius: 2px;
+  // border-top-left-radius: 2px;
+  border-radius: 100px;
+  background-color: #88ffff;
+  border: 2px solid #39858d;
+  transform: translateX(1.05rem);
+  transition: transform 0.1s ease;
+}
+
+.switch-outer.on:hover .switch-inner {
+  transform: translateX(1.05rem);
+  transition: transform 0.1s ease;
+}
+.switch-label {
+  display: inline-block;
+  vertical-align: top;
+  color: #8d9498;
+  margin-left: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+}
+.switch-outer.on ~ .switch-label {
+  color: #39868d;
 }

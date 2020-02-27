@@ -1,6 +1,7 @@
 import { categories } from "../../../../imports/default";
 
 Template.controls.onCreated(function() {
+  Categories.remove({});
   categories.forEach(category => {
     Categories.insert(category);
   });

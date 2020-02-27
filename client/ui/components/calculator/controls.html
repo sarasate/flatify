@@ -4,9 +4,16 @@
       <div class="calculator-right">
         <div class="total-ammount">
           <span class="number">{{result.result}}</span>
-          <p>{{result.summary}}</p>
           <span class="currency">EUR</span>
         </div>
+
+        <div class="summary">
+          {{#each result.summary}}
+          {{this}}
+          {{/each}}
+        </div>
+
+
       </div>
       <div class="calculator-left">
         <!-- This is where the questions go -->
@@ -41,7 +48,7 @@
 
 <template name="question">
   <div class="field">
-    <label for="">{{label}}</label>
+    <label for="">{{label}}</label> {{displayValue}}
     <input type={{type}} value={{value}} min="0" max="2" step="1">
     {{displaySelected}}
   </div>

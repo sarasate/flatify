@@ -221,7 +221,8 @@ input[type="range"] {
   background: transparent; /* Otherwise white in Chrome */
 }
 
-.ui .form input[type="number"], .ui .form input[type="number"]:focus {
+.ui .form input[type="number"],
+.ui .form input[type="number"]:focus {
   border-color: $flatify-full;
   border-radius: 3px;
   border-width: 2px;

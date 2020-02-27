@@ -20,6 +20,11 @@ Template.controls.helpers({
     if (!this.options) return;
     return this.options[this.value].value;
   },
+  displayValue: function() {
+    return this.selectedValue
+      ? this.selectedValue.expression
+      : this.options[this.value].modifier.expression;
+  },
 
   result: function() {
     // return 0;
@@ -46,7 +51,7 @@ Template.controls.helpers({
       });
     console.log(summary);
     const result = sorted.reduce((a, b) => a + b.expression, 0);
-    return { result, summary };
+    return { summary, result };
   }
 });
 

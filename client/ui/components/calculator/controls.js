@@ -35,9 +35,15 @@ Template.controls.helpers({
 Template.controls.events({
   "change .field"(event) {
     const question = this;
-    // question.value = event.target.value;
-    // const [questions] = Categories.find().fetch();
-    // const updatedQuestions
+
+    const { type, modifier } = question;
+    const { target, operator, expression } = modifier;
+
+    const newValue =
+      type === "checkbox" ? event.target.checked : event.target.value;
+
+    console.log(modifier, newValue);
+
     Categories.update(
       { "questions.id": question.id },
       { $set: { "questions.$.value": event.target.value } }

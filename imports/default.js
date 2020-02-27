@@ -24,31 +24,20 @@ export const categories = [
         optional: true,
         type: "range",
         label: "Degree of automation",
-
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: "10%"
+        },
         options: [
           {
-            value: "low",
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: "input"
-            }
+            value: "low"
           },
           {
-            value: "medium",
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: "input"
-            }
+            value: "medium"
           },
           {
-            value: "high",
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: "input"
-            }
+            value: "high"
           }
         ],
         defaultValue: 1
@@ -59,14 +48,14 @@ export const categories = [
         optional: true,
         type: "range",
         label: "Risk",
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: "input"
+        },
         options: [
           {
-            value: 10,
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: "input"
-            }
+            value: 10
           }
         ],
         defaultValue: 1
@@ -77,14 +66,14 @@ export const categories = [
         optional: true,
         type: "checkbox",
         label: "Additional insurance required",
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: "input"
+        },
         options: [
           {
-            value: 10,
-            modifier: {
-              target: "base",
-              operator: "+",
-              expression: "input"
-            }
+            value: 10
           }
         ],
         defaultValue: 1

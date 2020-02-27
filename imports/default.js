@@ -21,6 +21,7 @@ export const standard = [
   {
     label: "General",
     activated: true,
+    noSwitch: true,
     questions: [
       // {
       //   _id: "0",

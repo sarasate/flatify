@@ -15,7 +15,9 @@
 
           {{#each categories}}
           <label class="categorie-label">{{label}}</label>
+          {{#unless noSwitch}}
           {{#if activated}} {{> switch classes="on" data=this}} {{else}} {{> switch classes="off" data=this}} {{/if}}
+          {{/unless}}
 
 
           {{#each displayQuestions}}

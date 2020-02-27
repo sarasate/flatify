@@ -55,7 +55,13 @@ export const categories = [
         },
         options: [
           {
-            value: 10
+            value: "low"
+          },
+          {
+            value: "medium"
+          },
+          {
+            value: "high"
           }
         ],
         defaultValue: 1
@@ -73,7 +79,10 @@ export const categories = [
         },
         options: [
           {
-            value: 10
+            value: "yes"
+          },
+          {
+            value: "no"
           }
         ],
         defaultValue: 1

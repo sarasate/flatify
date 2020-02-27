@@ -14,6 +14,10 @@ Template.controls.helpers({
   displayQuestions: function() {
     return this.activated && this.questions;
   },
+
+  displaySelected: function() {
+    return this.options[this.value === 0 ? this.value : this.value - 1].value;
+  },
   updateValue: function(category, question, value) {
     const cat = Categories.find({ label: category }).fetch();
     const quest = cat.questions.find(q => q === question);

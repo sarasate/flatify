@@ -51,7 +51,7 @@ Template.controls.events({
     console.log(modifier, newValue);
 
     Categories.update(
-      { "questions.id": question._id },
+      { "questions._id": question._id },
       { $set: { "questions.$.value": newValue } }
     ); //  ? {...q, value = event.target.value} : q
   },

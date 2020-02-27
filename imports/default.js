@@ -19,7 +19,7 @@ export const categories = [
     activated: true,
     questions: [
       {
-        id: "0",
+        _id: "0",
         value: 0,
         optional: true,
         type: "number",
@@ -43,7 +43,7 @@ export const categories = [
         defaultValue: 0
       },
       {
-        id: "1",
+        _id: "1",
         value: 1,
         optional: true,
         type: "range",

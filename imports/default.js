@@ -45,7 +45,7 @@ export const standard = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 300
+              expression: 50
             }
           },
           {
@@ -53,7 +53,7 @@ export const standard = [
             modifier: {
               target: "base",
               operator: "+",
-              expression: 15
+              expression: 100
             }
           }
         ]

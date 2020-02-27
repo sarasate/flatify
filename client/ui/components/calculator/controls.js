@@ -16,6 +16,7 @@ Template.controls.helpers({
   },
 
   displaySelected: function() {
+    if (!this.options) return;
     return this.options[this.value === 0 ? this.value : this.value - 1].value;
   },
   updateValue: function(category, question, value) {

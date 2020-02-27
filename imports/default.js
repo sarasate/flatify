@@ -19,6 +19,30 @@ export const categories = [
     activated: true,
     questions: [
       {
+        id: "0",
+        value: 0,
+        optional: true,
+        type: "text",
+        label: "Cost",
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: 100
+        },
+        // options: [
+        //   {
+        //     value: "low"
+        //   },
+        //   {
+        //     value: "medium"
+        //   },
+        //   {
+        //     value: "high"
+        //   }
+        // ],
+        defaultValue: 0
+      },
+      {
         id: "1",
         value: 0,
         optional: true,

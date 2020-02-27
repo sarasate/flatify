@@ -23,20 +23,20 @@ export const standard = [
     activated: true,
     noSwitch: true,
     questions: [
-      // {
-      //   _id: "0",
-      //   value: 0,
-      //   selectedValue: null,
-      //   optional: true,
-      //   type: "number",
-      //   label: "Cost",
-      //   modifier: {
-      //     target: "base",
-      //     operator: "add",
-      //     expression: 100
-      //   },
-      //   defaultValue: 0
-      // },
+      {
+        _id: "0",
+        value: 0,
+        selectedValue: null,
+        optional: true,
+        type: "number",
+        label: "Cost",
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: 100
+        },
+        defaultValue: 0
+      },
       {
         _id: "1",
         value: 1,
@@ -49,7 +49,7 @@ export const standard = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 10
             }
           },
@@ -57,7 +57,7 @@ export const standard = [
             value: "medium",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 20
             }
           },
@@ -65,7 +65,7 @@ export const standard = [
             value: "high",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 30
             }
           }
@@ -84,7 +84,7 @@ export const standard = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 5
             }
           },
@@ -92,7 +92,7 @@ export const standard = [
             value: "medium",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 10
             }
           },
@@ -100,7 +100,7 @@ export const standard = [
             value: "high",
             modifier: {
               target: "base",
-              operator: "add",
+              operator: "+",
               expression: 15
             }
           }
@@ -118,24 +118,16 @@ export const standard = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "add",
-              expression: 5
+              operator: "+",
+              expression: 0
             }
           },
           {
             value: "medium",
             modifier: {
               target: "base",
-              operator: "add",
-              expression: 10
-            }
-          },
-          {
-            value: "high",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 15
+              operator: "+",
+              expression: 300
             }
           }
         ]
@@ -145,34 +137,14 @@ export const standard = [
         value: 0,
         selectedValue: null,
         optional: true,
-        type: "range",
-        label: "Urgengy",
-        options: [
-          {
-            value: "low",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 5
-            }
-          },
-          {
-            value: "medium",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 10
-            }
-          },
-          {
-            value: "high",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 15
-            }
-          }
-        ]
+        type: "number",
+        label: "Cost",
+        modifier: {
+          target: "base",
+          operator: "+",
+          expression: 100
+        },
+        defaultValue: 0
       },
 
       {
@@ -187,50 +159,24 @@ export const standard = [
             value: "low",
             modifier: {
               target: "base",
-              operator: "add",
-              expression: 5
+              operator: "+",
+              expression: 10
             }
           },
           {
             value: "medium",
             modifier: {
               target: "base",
-              operator: "add",
-              expression: 10
+              operator: "+",
+              expression: 20
             }
           },
           {
             value: "high",
             modifier: {
               target: "base",
-              operator: "add",
-              expression: 15
-            }
-          }
-        ]
-      },
-      {
-        _id: "100",
-        value: 0,
-        selectedValue: null,
-        optional: true,
-        type: "checkbox",
-        label: "Additional insurance required",
-        options: [
-          {
-            value: "no",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 0
-            }
-          },
-          {
-            value: "yes",
-            modifier: {
-              target: "base",
-              operator: "add",
-              expression: 300
+              operator: "+",
+              expression: 30
             }
           }
         ],

@@ -29,18 +29,24 @@ Template.controls.helpers({
       return a.concat(!b.activated ? { selectedValue: 0 } : b.questions);
     }, []);
 
-    const values = activatedQuestions.map(elem =>
-      elem.selectedValue
+    const values = activatedQuestions.map(elem => {
+      const res = elem.selectedValue
         ? elem.selectedValue
         : elem.options
         ? elem.options[elem.value].modifier
-        : { expression: elem.selectedValue }
-    );
+        : { expression: elem.selectedValue };
+      return { question: elem.label, ...res };
+    });
 
     const sorted = values.sort((a, b) => a.operator - b.operator);
-
+    const summary = sorted
+      .filter(elem => !!elem.expression)
+      .map(elem => {
+        return `${elem.question} ${elem.operator || "+"} ${elem.expression}`;
+      });
+    console.log(summary);
     const result = sorted.reduce((a, b) => a + b.expression, 0);
-    return result;
+    return { result, summary };
   }
 });
 

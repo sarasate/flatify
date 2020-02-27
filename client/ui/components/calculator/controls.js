@@ -13,7 +13,10 @@ Template.question.helpers({
     return this.selectedValue
       ? {
           operator: this.selectedValue.operator,
-          value: this.selectedValue.expression,
+          value:
+            this.type === "number"
+              ? this.selectedValue.expression * this.value
+              : this.selectedValue.expression,
           class:
             this.selectedValue.operator === "+" ||
             this.selectedValue.operator === "x"

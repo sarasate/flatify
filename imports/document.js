@@ -5,7 +5,7 @@ export const document = [
     questions: [
       {
         _id: "d1",
-        value: 1,
+        value: 0,
         selectedValue: null,
         optional: true,
         type: "number",

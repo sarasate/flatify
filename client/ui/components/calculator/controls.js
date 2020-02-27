@@ -34,7 +34,7 @@ Template.controls.helpers({
           .map(elem => Number(elem.value));
       }, [])
       .reduce((a, b) => a + b, 0);
-    return Number(result);
+    return Number(result) || 0;
   }
 });
 
@@ -54,6 +54,14 @@ Template.controls.events({
       { "questions.id": question.id },
       { $set: { "questions.$.value": event.target.value } }
     ); //  ? {...q, value = event.target.value} : q
+  },
+  "click .switch-outer"(event) {
+    const category = this.data;
+
+    Categories.update(
+      { _id: category._id },
+      { $set: { activated: !category.activated } }
+    );
   }
 });
 

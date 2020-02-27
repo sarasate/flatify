@@ -9,8 +9,8 @@
 
           {{#each categories}}
           <label class="categorie-label">{{label}}</label>
-          {{#if activated}} {{> switch classes="on"}} {{else}} {{> switch classes="off"}} {{/if}}
-     
+          {{#if activated}} {{> switch classes="on" data=this}} {{else}} {{> switch classes="off" data=this}} {{/if}}
+
 
           {{#each displayQuestions}}
 

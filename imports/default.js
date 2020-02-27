@@ -67,7 +67,7 @@ export const categories = [
         defaultValue: 1
       },
       {
-        id: "2",
+        _id: "2",
         value: 0,
         optional: true,
         type: "range",
@@ -91,7 +91,7 @@ export const categories = [
         defaultValue: 1
       },
       {
-        id: "3",
+        _id: "3",
         value: 0,
         optional: true,
         type: "checkbox",
